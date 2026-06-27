@@ -1,0 +1,217 @@
+/*
+ * Globals
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+
+/*
+ * Base structure
+ */
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+
+
+/*
+ * Header
+ */
+
+ .banner-wrap {
+     background-image: url("./resources/MyBg.png");
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center center;
+     border-bottom: none;
+     position: relative;
+     z-index: 1;
+ }
+ .overlay {
+     z-index: 0;
+     height: 100%;
+     width: 100%;
+     background: black;
+     opacity: 0.6;
+     position: absolute;
+     top: 0;
+     left: 0;
+
+     inset:0;
+     background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.7)
+     );
+ }
+
+.banner-wrap main {
+  position: relative;
+  z-index: 1;
+}
+
+#typed {
+  display: inline-block;
+  min-width: 13rem;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+header{
+    background: rgba(0,0,0,.8);
+    transition: background .4s ease;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.scrolling{
+    background: rgba(0,0,0,.95);
+}
+
+.card {
+  font-size: 0.95rem;
+  transition:.35s ease;
+  border:none;
+}
+
+.card h1 {
+  font-size: 1.75rem;
+}
+
+.card .fw-bold {
+  font-size: 1rem;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.hero-title{
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.badge{
+    transition:.3s;
+}
+
+.badge:hover{
+    transform:scale(1.1);
+}
+
+.btn-primary{
+    border-radius:40px;
+    padding:12px 28px;
+}
+
+/*
+ * PRINT MODE (CRITICAL FIX — PREVENT PAGE 2)
+ */
+@media print {
+
+  @page {
+    size: A4;
+    margin: 8mm;
+  }
+
+  body {
+    background: #fff ;
+    color: #000 ;
+    text-shadow: none ;
+    box-shadow: none ;
+    font-size: 10pt;
+    line-height: 1.15;
+    height: auto ;
+    overflow: visible ;
+  }
+
+  /* REMOVE WEBSITE ELEMENTS */
+  header,
+  nav,
+  footer,
+  .btn,
+  form {
+    display: none ;
+  }
+
+  /* REMOVE BACKGROUND IMAGE */
+  .banner-wrap {
+    background: none ;
+  }
+
+  .overlay {
+    display: none ;
+  }
+
+  /* REMOVE ALL EXTRA SPACING */
+  section {
+    margin: 0 0 5px 0;
+    padding: 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* MAKE CARDS TIGHT LIKE RESUME BLOCKS */
+  .card {
+    border: 1px solid #ccc ;
+    padding: 5px;
+    margin-bottom: 4px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* PREVENT PAGE BREAK ISSUES */
+  html, body {
+    height: auto;
+    overflow: hidden;
+  }
+
+  img {
+    max-width: 100px;
+  }
+
+  a {
+    color: #000 ;
+    text-decoration: none;
+  }
+
+  .badge {
+    background: #eee ;
+    color: #000 ;
+  }
+}
